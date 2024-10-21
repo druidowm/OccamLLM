@@ -26,4 +26,6 @@ By enhancing LLM arithmetic capabilities without increasing the number of LLM ge
 
 To train an OccamLLM, call `finetune_occamnet_decoder.py` and `finetune_router.py`. To evaluate an OccamLLM or a baseline, call `eval_llm.py`.
 
+We have set up helper functions to train and evaluate OccamLlama 8B/70B on SLURM clusters. For training, run `sbatch ft_*B_occamnet.sh` and `sbatch ft_*B_router.sh`, and for evaluation, run `eval_occamllama.py -b *` where `*` is either 8 or 70.
+
 Results from our experiments are contained in `results`. `plot_results.ipynb` and `generate_latex_tables.ipynb` contain code to generate key figures and tables from the paper.
