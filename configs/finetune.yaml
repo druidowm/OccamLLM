@@ -1,0 +1,52 @@
+seed: 1
+savestring: test
+data_file: occamnet/occamnet_train.json
+
+dirs: include:configs/sc_dirs.yaml
+
+llm:
+  debug: false
+
+  freeze: true
+  load_in_f16: true
+  
+  release: meta-llama
+  version: Meta-Llama-3-8B-Instruct
+
+  append_bos: true
+  system_prompt: ""
+  assistant_prompt: ""
+  
+  lora:
+    r: 1
+    alpha: 32
+    dropout: 0.0
+    target_modules: ["q_proj","v_proj","k_proj","o_proj","gate_proj","up_proj","down_proj"]
+    modules_to_save: null
+
+
+
+trainer:
+  num_epochs: 1
+  save_every: 1000        # steps to save
+  eval_every: 1000        # steps to evaluate
+  train_len: 80000
+  test_len: 600   
+  test_batch_size: 1
+  train_batch_size: 1
+  validation_dataset: occamnet/occamnet_val.json
+
+
+optimizer:
+  lr: 6.e-4
+  wd: 0.01
+  eps: 1.e-8
+  warmup_pct: 0.2
+  gamma: 0.95
+  scheduler: step
+  gradient_accumulation_steps: 8
+  alpha: 0.05
+
+
+
+occamnet: include:configs/occamnet.yaml

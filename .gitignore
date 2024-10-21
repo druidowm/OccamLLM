@@ -1,0 +1,17 @@
+secrets.txt
+.DS_Store
+.ipynb_checkpoints
+explorecot2.ipynb
+secrets.json
+logs
+checkpoints
+*.txt
+*.data
+*__pycache__
+
+eval_llm.sh
+eval_occamllama.sh
+test_llm.py
+test_occamllama.py
+test_main.py
+meta-llama

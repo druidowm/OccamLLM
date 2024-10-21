@@ -1,0 +1,7 @@
+data_dir: datasets 
+prompts_dir: prompts
+llm_dir: ./
+checkpoint_dir: checkpoints
+log_dir: logs
+tokenizer_dir: ./
+results_dir: results

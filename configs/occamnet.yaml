@@ -1,0 +1,22 @@
+from_pt: None
+
+# Loss config
+loss: "OccamNet"
+loss_type: "Categorical"
+num_samples: 10000
+mask_num: 1.e+9
+router_num: 5.e+9
+
+# OccamNet configs
+num_inputs: 2
+num_layers: 1
+primitives: ["Identity", "Addition", "Subtraction", "Product", "Division", "Power", "Cos", "Sin", "Root", "Exp", "Log"]
+softmax_weights: true
+temperature: 10.0
+occamnet_skip_connections: true
+
+# WeightDecoder configs
+num_llm_layers: 33
+encoding_layers: 2
+hidden_size: 64
+skip_connections: true
